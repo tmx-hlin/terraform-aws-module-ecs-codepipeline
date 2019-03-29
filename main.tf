@@ -315,9 +315,8 @@ resource "aws_codepipeline_webhook" "webhook" {
 }
 
 module "github_webhooks" {
-  source  = "terra.tmx.cloud/devops-tools/module-github-repo-webhooks/aws"
-  version = "0.1.4"
-
+  source  = "github.com/tmx-hlin/terraform-aws-module-github-repo-webhooks.git"
+  
   enabled              = "${var.webhook_enabled}"
   github_organization  = "${var.repo_owner}"
   github_repositories  = ["${var.repo_name}"]
