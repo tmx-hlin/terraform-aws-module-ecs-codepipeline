@@ -184,8 +184,7 @@ data "aws_caller_identity" "default" {}
 data "aws_region" "default" {}
 
 module "build" {
-  source  = "terra.tmx.cloud/devops-tools/module-codebuild/aws"
-  version = "0.1.5"
+  source  = "github.com/tmx-hlin/terraform-aws-module-codebuild.git"
 
   enabled               = "${var.enabled}"
   namespace             = "${var.namespace}"
